@@ -22,6 +22,7 @@ function generatePassword() {
   var newNumeric;
   var newSpecialChars;
   var newLastItem;
+
   if (characterTypes.length == 1){
     if (characterTypes.indexOf("lowercase") !== -1){
       newLowerCase = getMultipleRandom(lowerCase, passwordLength);
@@ -103,36 +104,8 @@ function generatePassword() {
     }
     console.log(listArr);
   }
-  console.log(newLastItem); // output's blank array
-  console.log(extra);
-  console.log(characterTypes);
-  console.log(initial);
-  console.log(newLowerCase);
-  console.log(newUpperCase);
-  // console.log(newNumeric);
-  // console.log(newSpecialChars);
-  console.log(lastItem);
-  console.log(passwordLength);
-  // var newLowerCase = newLowerCase.join("");
-  // var newUpperCase = newUpperCase.join("");
-  // var newNumeric = newNumeric.join("");
-  // var newSpecialChars = newSpecialChars.join("");
-  // var newLastItem = newLastItem.join("");
-
-  // let listarray = [...newLowerCase, ...newUpperCase, ...newNumeric, ...newSpecialChars, ...newLastItem];
-  // let newListArray = listarray.join("");
-  // console.log(listarray);
-  // console.log(listArr);
-
-
-
-
-
-//  let arrayPassword = listArr.sort((a, b) => 0.5 - Math.random());
-//  console.log(arrayPassword); 
 
 let test = [];
-
 
  for(i = 0; i < listArr.length; i++) {
   test.push(listArr[i].join(""));
@@ -148,8 +121,6 @@ console.log(splitTest);
 
 let arrayPassword;
 
-// var newlistArr = listArr.join("");
-// console.log(newlistArr);
 if (characterTypes.length == 1){
   let NewSplitTest = [...splitTest, ...newLowerCase, ...newUpperCase, ...newNumeric, ...newSpecialChars];
 
