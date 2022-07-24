@@ -16,6 +16,8 @@ function generatePassword() {
   const initial = characterTypes.slice(0, lastItem);
   // sets a number that will be added to the last element of the array characterTypes
   var extra = passwordLength - (initial.length * removedDecimal);
+
+  // these varables/const are for ease of use in the if statements 
   const listArr = [];
   var newLowerCase;
   var newUpperCase;
@@ -23,6 +25,9 @@ function generatePassword() {
   var newSpecialChars;
   var newLastItem;
 
+  // calculates if the characterTypes chosen is == 1 and then 
+  // generates said character by how long the user once the password to be, 
+  // then randomizes it
   if (characterTypes.length == 1){
     if (characterTypes.indexOf("lowercase") !== -1){
       newLowerCase = getMultipleRandom(lowerCase, passwordLength);
@@ -105,36 +110,42 @@ function generatePassword() {
     console.log(listArr);
   }
 
+  // a new empty array
 let test = [];
 
+// joins listArr to test
  for(i = 0; i < listArr.length; i++) {
   test.push(listArr[i].join(""));
-  console.log("for loop");
+  // console.log("for loop");
 }
 
+// gets rid of commas between varaibles in the array test
 let joinTest = test.join("");
-console.log(joinTest);
+// console.log(joinTest);
 
-
+// splits the characters in the array to be easily accessed and randomized once again
 let splitTest = joinTest.split("");
-console.log(splitTest);
+// console.log(splitTest);
 
 let arrayPassword;
 
+// randomizes all characters once again
 if (characterTypes.length == 1){
   let NewSplitTest = [...splitTest, ...newLowerCase, ...newUpperCase, ...newNumeric, ...newSpecialChars];
 
   arrayPassword = [...NewSplitTest].sort((a, b) => 0.5 - Math.random());
 }else{
   arrayPassword = [...splitTest].sort((a, b) => 0.5 - Math.random());
-  console.log(arrayPassword);
+  // console.log(arrayPassword);
 }
 
+// joins the newly random generated password
   var startPassword = arrayPassword.join("");
-  console.log(startPassword);
+  // console.log(startPassword);
   var password = startPassword;
 
-  console.log(password);
+  // returns the passsword
+  // console.log(password);
   return password;
  }
  // Get references to the #generate element
